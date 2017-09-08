@@ -3,6 +3,7 @@ class CreateMeals < ActiveRecord::Migration[5.1]
         create_table :meals do |t|
             t.string :name, null: false
             t.string :ingredients, null: false, array: true, default: []
+            t.string :photo_url
 #            t.string :tags, array: true, default: []
 #            t.string :category, index: true, null: false, array: true, default: []
             t.decimal :price, null: false, precision: 8, scale: 2
