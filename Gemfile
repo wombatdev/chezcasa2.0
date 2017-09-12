@@ -30,6 +30,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'bower-rails'
+gem 'devise'
+gem 'angular-rails-templates' #=> allows us to place our html views in the assets/javascripts directory
+gem 'active_model_serializers'
+gem 'bootstrap-sass', '~> 3.3.6' #=> bootstrap also requires the 'sass-rails' gem, which should already be included in your gemfile
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

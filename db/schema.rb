@@ -17,17 +17,20 @@ ActiveRecord::Schema.define(version: 20170907182327) do
 
   create_table "chefs", force: :cascade do |t|
     t.string "name", null: false
+    t.string "username", null: false
     t.string "tagline", null: false
     t.integer "zip_code", null: false
     t.string "photo_url"
     t.string "bio", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["username"], name: "index_chefs_on_username"
   end
 
   create_table "meals", force: :cascade do |t|
     t.string "name", null: false
     t.string "ingredients", default: [], null: false, array: true
+    t.string "photo_url"
     t.decimal "price", precision: 8, scale: 2, null: false
     t.string "portion", null: false
     t.integer "quantity", null: false
@@ -40,8 +43,13 @@ ActiveRecord::Schema.define(version: 20170907182327) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "username", null: false
+    t.integer "zip_code", null: false
+    t.string "photo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["username"], name: "index_users_on_username"
   end
 
 end
